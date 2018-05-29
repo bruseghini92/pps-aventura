@@ -9,7 +9,7 @@ class Evento(models.Model):
     resultado = models.FileField(null=True)
     foto = models.ImageField()
     videos = models.URLField(max_length=30,blank=True, null=True)
-    #ScomoLlegar = modelgis.PointField()
+    #comoLlegar = modelgis.PointField()
 
     def __str__(self):
         return 
