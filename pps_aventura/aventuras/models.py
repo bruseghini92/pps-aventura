@@ -12,6 +12,7 @@ class Evento(models.Model):
     ubicacionLat = models.CharField(max_length=50, blank=True, null=True)
     ubicacionLng = models.CharField(max_length=50, blank=True, null=True)  
     fecha = models.DateField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.nombre
