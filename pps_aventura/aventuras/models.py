@@ -11,7 +11,7 @@ class Evento(models.Model):
     videos = models.URLField(max_length=30,blank=True, null=True)
     ubicacionLat = models.CharField(max_length=50, blank=True, null=True)
     ubicacionLng = models.CharField(max_length=50, blank=True, null=True)  
-    fecha = models.DateField(auto_now_add=True)
+    fecha = models.DateField()
 
     def __str__(self):
         return self.nombre
