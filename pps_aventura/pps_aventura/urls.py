@@ -24,6 +24,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+    url(r'^eventos/', include('aventuras.urls')),
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
