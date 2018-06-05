@@ -1,3 +1,13 @@
 from django.shortcuts import render
+from django.db.models import Q
+from .models import Evento
 
-# Create your views here.
+def index(request):
+    if 'search' in request.GET:
+        query = Evento.objects.filter(
+            Q(name=request.GET['search']) | Q(tags__name__in=request.GET['search'])
+        ).distinct()
+        context = {'event': query}
+    else:
+        context = {'event_list': Evento.objects.all()}
+    return render(request, 'aventuras/index.html', context)
