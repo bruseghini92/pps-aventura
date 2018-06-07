@@ -29,4 +29,6 @@ urlpatterns = [
             'document_root': settings.MEDIA_ROOT,
         }),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^schedule/', include('schedule.urls')),
+    url(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

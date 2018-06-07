@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'photologue',
     'sortedm2m',
     'django.contrib.sites',
-    #'mapwidgets',
+    'schedule',
+    'djangobower',
 ]
 
 SITE_ID = 1
@@ -71,6 +72,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                "django.template.context_processors.request",   
 
             ],
         },
@@ -144,6 +146,24 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STATICFILES_FINDERS = (
+
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
+    'djangobower.finders.BowerFinder',
+
+)
+
+BOWER_COMPONENTS_ROOT = '/PROJECT_ROOT/components/'
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "../media/")
 MEDIA_URL = '/media/'
