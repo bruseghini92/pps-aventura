@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'aventuras',
     'rest_framework',
     'photologue',
+    'photologue_custom',
     'sortedm2m',
     'django.contrib.sites',
     #'mapwidgets',

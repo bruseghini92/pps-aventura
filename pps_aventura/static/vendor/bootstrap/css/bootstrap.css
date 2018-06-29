@@ -8801,7 +8801,7 @@ button.bg-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: rgb(255, 115, 0) !important;
 }
 
 .text-primary {
@@ -8817,7 +8817,7 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #545b62 !important;
+  color: #9e2251 !important;
 }
 
 .text-success {
