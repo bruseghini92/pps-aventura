@@ -4,14 +4,15 @@ body {
 .slide{
   width: 100%;
   height: 600px;
+  float:left;
+  width: 100%;
+  display: block !important;
+  overflow:hidden;
 }
 
 .slide img{
   width: 100%;
   height: 600px;
-  border-radius: .5em;
-  align-content: center;
-  position: absolute;
 }
 
 .slide .img2, .slide .img3, .slide .img4, .slide .img5, .slide .img6, .slide .img7, .slide .img8 {
