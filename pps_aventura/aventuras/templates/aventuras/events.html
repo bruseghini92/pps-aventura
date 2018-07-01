@@ -5,7 +5,7 @@
         <table align="center">
             <hr>
             <div class="row">
-                <div class="col-lg-4">
+                <!--<div class="col-lg-4">
                     <tr>
                         <td>
                             <form action="/eventos" method="GET">
@@ -20,23 +20,20 @@
                     <td>
                         <b>Eventos</b>
                     </td>
-                </div>
-                <table align="center">
-                    {% for evento in event_list %}
-                    <tr>
+                </div>-->
+                <table>
+                    {% for evento in event_list %} {% cycle '<tr>' '' '' '' %}
                         <td>
                             <div class="col-lg-4 mr-auto">
-                                <img src='http://localhost:8000/media/{{evento.foto}}' width="300" height="200">
+                                <img src='http://localhost:8000/media/{{evento.foto}}' width="240" height="180">
+                                <small>
+                                    <h5 style="text-transform:capitalize;">{{ evento.nombre }}</h5>
                                 </small>
                             </div>
-                            <div class="col-lg-4 ml-auto">
-                                <h5>{{ evento.nombre }}</h5>
                         </td>
-                    </tr>
-                    {% endfor %}
+                        {% cycle '' '' '' '</tr>' %} {% endfor %}
                 </table>
-        </table>
-        </div>
-        </div>
+            </div>
+    </div>
 </section>
 {% endblock %}
