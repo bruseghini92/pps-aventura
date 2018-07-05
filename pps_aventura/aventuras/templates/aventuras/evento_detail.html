@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %}
+<section class="bg-primary text-white mb-0" id="service">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-white">Detalle</h2>
+        <table align="center">
+            <hr>
+            <div class="row">
+                <table align="center">
+                    <tr>
+                        <td colspan=2>
+                            <h1 align="center">{{ object.nombre }}</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src='{{ MEDIA_URL }}{{ object.foto }}'>
+                        </td>
+                        <td>
+                            <h1>Descripción:{{ object.descripcion }}</h1>
+                            <p>Incripción: {{ object.inscripcion }}</p>
+                            <p>Reglamento: {{ object.reglamento }}</p>
+                            {% if resultado %}
+                            <p>Resultado: {{ object.resultado }}</p>
+                            {% endif %}
+                            <p>Fecha: {{ object.fecha }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <h3>Recorrido:</h3>
+                            <br>
+                            <iframe src="{{ object.recorrido }}" width="580" height="420"></iframe>
+                        </td>
+                    </tr>
+                </table>
+                <p align="right">
+                    <a type="submit" class="btn btn-primary btn-xl" href="{{request.META.HTTP_REFERER|escape}}">Volver</a>
+                </p>
+            </div>
+    </div>
+</section>
+{% endblock %}

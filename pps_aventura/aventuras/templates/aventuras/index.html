@@ -6,7 +6,7 @@
 <!-- #region Jssor Slider Begin -->
 <!-- Generator: Jssor Slider Maker -->
 <!-- Source: https://www.jssor.com -->
-<script src="http://localhost:8000/static/js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
+<script src="{% static "js/jssor.slider-27.1.0.min.js" %}" type="text/javascript"></script>
 <script type="text/javascript">
   jssor_1_slider_init = function () {
 
@@ -157,28 +157,28 @@
   </div>
   <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/1.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}1.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/2.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}2.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/3.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}3.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/4.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}4.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/5.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}5.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/6.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}6.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/7.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}7.jpg" />
     </div>
     <div data-p="225.00">
-      <img data-u="image" src="http://localhost:8000/media/8.jpg" />
+      <img data-u="image" src="{{ MEDIA_URL }}8.jpg" />
       <!--
                 <div style="position:absolute;top:30px;left:30px;width:480px;height:130px;background-color:rgba(255,188,5,0.8);font-family:'Roboto Condensed',sans-serif;font-size:40px;color:#000000;line-height:1.5;padding:5px 5px 5px 5px;box-sizing:border-box;">TOUCH SWIPE
 <br />
@@ -218,9 +218,13 @@
     <script>
 
       $(document).ready(function () {
+        var currentdate = new Date(); 
+        var datetime = "Last Sync: " + currentdate.getDate() + "-"
+                + (currentdate.getMonth()+1)  + "-" 
+                + currentdate.getFullYear() 
 
         $('#calendar').fullCalendar({
-          defaultDate: '2018-06-12',
+          defaultDate: currentdate,
           editable: true,
           eventLimit: true, // allow "more" link when too many events
           events: [
