@@ -6,7 +6,7 @@ from .models import Evento
 
 
 def index(request):
-    context = {'event_list': Evento.objects.all()}
+    context = {'event_list':Evento.objects.all()}
     return render(request, 'aventuras/index.html', context)
 
 
@@ -18,7 +18,7 @@ def events(request):
             nombre=request.GET['search']).distinct()
         context = {'event': query}
     else:
-        context = {'event_list': Evento.objects.all()}
+        context = {'event_list': Evento.objects.filter(ourEvent=True)}
     return render(request, 'aventuras/events.html', context)
 
 class EventoListView(ListView):
@@ -27,7 +27,7 @@ class EventoListView(ListView):
     paginate_by = 10  # if pagination is desired
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = {'object_list': Evento.objects.filter(ourEvent=True)}
         return context
 
 class EventoDetailView(DetailView):

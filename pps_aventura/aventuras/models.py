@@ -13,6 +13,7 @@ class Evento(models.Model):
     videos = models.URLField(max_length=30, blank=True, null=True)
     recorrido = models.URLField(blank=True, null=True, default="https://www.google.com/maps/d/u/0/")
     fecha = models.DateField()
+    ourEvent = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nombre
