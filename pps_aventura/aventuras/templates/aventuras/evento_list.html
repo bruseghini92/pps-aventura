@@ -22,10 +22,12 @@
                     </td>
                 </div>-->
                 <table>
-                    {% for evento in event_list %} {% cycle '<tr>' '' '' '' %}
+                    {% for evento in object_list %} {% cycle '<tr>' '' '' '' %}
                         <td>
                             <div class="col-lg-4 mr-auto">
-                                <img src='http://localhost:8000/media/{{evento.foto}}' width="240" height="180">
+                                <a class="btn btn-info" href="{% url 'evento-detail' evento.id %}">
+                                    <img src='{{ MEDIA_URL }}{{evento.foto}}' width="240" height="180">
+                                </a>
                                 <small>
                                     <h5 style="text-transform:capitalize;">{{ evento.nombre }}</h5>
                                 </small>
@@ -33,7 +35,7 @@
                         </td>
                         {% cycle '' '' '' '</tr>' %} {% endfor %}
                 </table>
-            </div>
+            </div>      
     </div>
 </section>
 {% endblock %}

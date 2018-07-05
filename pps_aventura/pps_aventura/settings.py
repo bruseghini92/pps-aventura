@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pps_aventura.urls'
+ROOT_URLCONF = 'aventuras.urls'
 
 TEMPLATES = [
     {
@@ -121,7 +121,6 @@ MAP_WIDGETS = {
     "GOOGLE_MAP_API_KEY": "<google-api-key>"
 }
 """
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
