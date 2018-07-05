@@ -9,6 +9,8 @@ def index(request):
     context = {'event_list':Evento.objects.all()}
     return render(request, 'aventuras/index.html', context)
 
+def radio(request):
+    return render(request, 'aventuras/radio.html')
 
 def events(request):
     if 'search' in request.GET:

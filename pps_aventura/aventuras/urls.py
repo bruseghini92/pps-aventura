@@ -11,6 +11,7 @@ urlpatterns = [
     path('',views.index, name="index"),
     re_path(r'^eventos/', views.events, name="all-events"),
     re_path(r'^photologue/', include('photologue.urls', namespace='photologue')),
+    path('radio',views.radio),
     #re_path(r'^search/$', views.search, name="search-service"),
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
