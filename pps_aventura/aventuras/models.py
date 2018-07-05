@@ -11,7 +11,7 @@ class Evento(models.Model):
     resultado = models.FileField(blank=True, null=True)
     foto = models.ImageField(blank=True, null=True)
     videos = models.URLField(max_length=30, blank=True, null=True)
-    recorrido = models.URLField(blank=True, null=True)
+    recorrido = models.URLField(blank=True, null=True, default="https://www.google.com/maps/d/u/0/")
     fecha = models.DateField()
 
     def __str__(self):
