@@ -231,20 +231,17 @@
           events: [
             {% for evento in event_list %}
                 {
+            id: '{{ evento.id }}',
             title: '{{ evento.nombre }}',
             start: '{{ evento.fecha }}',
-            inscripcion: '{{ evento.inscripcion }}'
+            inscripcion: '{{ evento.inscripcion }}',
+            ourEvent:'{{ evento.ourEvent|yesno:"true,false" }}'
           },
           {% endfor %}
                 
               ],
               eventClick: function(evento) {
-                  if(!'{{ evento.ourEvent }}')
-                  {
-                  window.open('{{evento.url}}');
-                  } else {
-                    location.href='fgbfgb/{{ evento.id }}'
-                  }
+                  window.open("http://localhost:8000/"+evento.id);
               }
             });
         
