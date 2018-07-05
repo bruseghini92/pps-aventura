@@ -3,10 +3,13 @@ from django.db.models import Q
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from .models import Evento
+from photologue.models import Gallery, Photo
 
 
 def index(request):
-    context = {'event_list':Evento.objects.all()}
+    context = {'event_list':Evento.objects.all(),
+    'slide_list':Photo.objects.filter(galleries=Gallery.objects.get(title='slide'))}
+    #'photo_list':Photo.objects.filter(gallery="tuvieja")}
     return render(request, 'aventuras/index.html', context)
 
 def radio(request):
