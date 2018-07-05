@@ -12,6 +12,9 @@ def index(request):
 def radio(request):
     return render(request, 'aventuras/radio.html')
 
+def about_us(request):
+    return render(request, 'aventuras/about_us.html')
+
 def events(request):
     if 'search' in request.GET:
         query = Evento.objects.filter(

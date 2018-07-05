@@ -141,7 +141,7 @@ section h2 {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link {
-  color: rgb(252, 252, 252);
+  color: rgb(255, 102, 0);
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
@@ -378,11 +378,11 @@ a:focus, a:hover, a:active {
 }
 
 .bg-secondary {
-  background-color: #000000 !important;
+  background-color: transparent !important;
 }
 
 .text-primary {
-  color: rgb(255, 153, 0) !important;
+  color: rgb(163, 158, 151) !important;
 }
 
 .text-secondary {
@@ -390,13 +390,13 @@ a:focus, a:hover, a:active {
 }
 
 .btn-primary {
-  background-color: #18BC9C;
-  border-color: #18BC9C;
+  background-color: rgb(255, 102, 0);
+  border-color: rgb(0, 0, 0);
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: #128f76;
-  border-color: #128f76;
+  background-color:rgb(189, 83, 12);
+  border-color: #ca3e13;
 }
 
 .btn-secondary {
