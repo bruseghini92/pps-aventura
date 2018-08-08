@@ -25,7 +25,7 @@ SECRET_KEY = '96*0vw$q@hxdlc+b0i7&$$hj0s93px_89!8m8ew74=(62*p%%u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'pps_aventura.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aventura_common',
+        'USER': 'aventura_admin',
+        'PASSWORD': 'servitequique',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -109,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
-#SERVER_EMAIL = 'noreply@aventurasdeportivas.com.ar'
 EMAIL_HOST = 'cloud.whservers.net'
 EMAIL_HOST_USER = 'noreply@aventurasdeportivas.com.ar'
 EMAIL_HOST_PASSWORD = 'servitequiquematute123!'
