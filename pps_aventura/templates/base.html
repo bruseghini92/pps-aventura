@@ -24,7 +24,6 @@
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/freelancer.css' %}" rel="stylesheet">
-
   <link href="{% static 'fullcalendar/fullcalendar.min.css' %}" rel='stylesheet' />
   <link href="{% static 'fullcalendar/fullcalendar.print.min.css' %}" rel='stylesheet' media='print' />
   <script src="{% static 'fullcalendar/lib/moment.min.js' %}"></script>
@@ -40,6 +39,9 @@
     
   </style>
 
+  <link rel="icon" 
+      type="image/png" 
+      href="{{ BASE_DIR }}/media/favicon.ico">
 </head>
 
 <body id="page-top">
@@ -62,7 +64,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ BASE_DIR }}/all">Eventos</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ BASE_DIR }}/about_us">Sobre Nosotros</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ BASE_DIR }}/contact_us">Ponte en contacto</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ BASE_DIR }}/radio">Radio</a>
@@ -87,7 +89,7 @@
           <h4 class="text-uppercase mb-4">Visita nuestras Redes Sociales</h4>
           <ul class="list-inline mb-0">
             <li class="list-inline-item">
-              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+              <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://es-la.facebook.com/aventurasdeportivas/">
                 <i class="fa fa-fw fa-facebook"></i>
               </a>
             </li>
@@ -115,7 +117,7 @@
         </div>
         <div class="col-md-4">
           <h4 class="text-uppercase mb-4">Sobre nosotros</h4>
-          <p class="lead mb-0">INSERTAR TEXTO AQUÍ
+          <p class="lead mb-0"><a href="{{ BASE_DIR }}/about_us">¿Quienes somos?</a></p>
         </div>
       </div>
     </div>

@@ -79,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pps_aventura.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -109,17 +108,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-"""
-MAP_WIDGETS = {
-    "GooglePointFieldWidget": (
-        ("zoom", 15),
-        ("mapCenterLocationName", "london"),
-        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'uk'}}),
-        ("markerFitZoom", 12),
-    ),
-    "GOOGLE_MAP_API_KEY": "<google-api-key>"
-}
-"""
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+#SERVER_EMAIL = 'noreply@aventurasdeportivas.com.ar'
+EMAIL_HOST = 'cloud.whservers.net'
+EMAIL_HOST_USER = 'noreply@aventurasdeportivas.com.ar'
+EMAIL_HOST_PASSWORD = 'servitequiquematute123!'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

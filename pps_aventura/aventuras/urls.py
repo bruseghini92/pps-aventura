@@ -13,6 +13,8 @@ urlpatterns = [
     re_path(r'^photologue/', include('photologue.urls', namespace='photologue')),
     path('radio',views.radio),
     path('about_us',views.about_us),
+    path('contact_us/',views.sentMessage, name="contact_us"),
+    path('success/', views.successView, name='success'),
     #re_path(r'^search/$', views.search, name="search-service"),
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
