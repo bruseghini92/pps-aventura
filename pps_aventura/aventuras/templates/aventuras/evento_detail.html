@@ -13,7 +13,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src='{{ MEDIA_URL }}{{ object.foto }}'>
+                            <img src='{{ MEDIA_URL }}{{ object.foto }}' width="580" height="420">
                         </td>
                         <td>
                             <h1>Descripción:{{ object.descripcion }}</h1>
@@ -26,10 +26,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan=2>
+                        <td colspan=2 align="center">
                             <h3>Recorrido:</h3>
-                            <br>
-                            <iframe src="{{ object.recorrido }}" width="580" height="420"></iframe>
+                            <img src='{{ MEDIA_URL }}{{ object.recorrido }}' width="580" height="420">
                         </td>
                     </tr>
                 </table>
