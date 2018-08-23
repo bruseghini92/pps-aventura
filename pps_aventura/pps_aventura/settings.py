@@ -25,7 +25,7 @@ SECRET_KEY = '96*0vw$q@hxdlc+b0i7&$$hj0s93px_89!8m8ew74=(62*p%%u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pps_aventura.urls'
+ROOT_URLCONF = 'aventuras.urls'
 
 TEMPLATES = [
     {
@@ -79,14 +79,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pps_aventura.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aventura_common',
+        'USER': 'aventura_admin',
+        'PASSWORD': 'servitequique',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -109,17 +112,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-"""
-MAP_WIDGETS = {
-    "GooglePointFieldWidget": (
-        ("zoom", 15),
-        ("mapCenterLocationName", "london"),
-        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'uk'}}),
-        ("markerFitZoom", 12),
-    ),
-    "GOOGLE_MAP_API_KEY": "<google-api-key>"
-}
-"""
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'cloud.whservers.net'
+EMAIL_HOST_USER = 'noreply@aventurasdeportivas.com.ar'
+EMAIL_HOST_PASSWORD = 'servitequiquematute123!'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # Internationalization
@@ -139,8 +138,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "../static/")
+STATIC_ROOT = os.path.join(BASE_DIR, '../static/')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "../media/")
 MEDIA_URL = '/media/'

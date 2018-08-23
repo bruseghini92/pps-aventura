@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+<section class="bg-primary text-white mb-0" id="service">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-white">Eventos</h2>
+        <table align="center">
+            <hr>
+            <div class="row">
+                <!--<div class="col-lg-4">
+                    <tr>
+                        <td>
+                            <form action="/eventos" method="GET">
+                                {% csrf_token %}
+                                <input name="search" placeholder="Buscar eventos.." id="buscador">
+                                <button type="submit" class="save btn btn-default">Buscar</button>
+                            </form>
+                        </td>
+                    </tr>
+                </div>
+                <div class="col-lg-4">
+                    <td>
+                        <b>Eventos</b>
+                    </td>
+                </div>-->
+                <table>
+                    {% for evento in object_list %} {% cycle '<tr>' '' '' '' %}
+                        <td>
+                            <div class="col-lg-4 mr-auto">
+                                <a class="btn btn-info" href="{% url 'evento-detail' evento.id %}">
+                                    <img src='{{ MEDIA_URL }}{{evento.foto}}' width="240" height="180">
+                                </a>
+                                <small>
+                                    <h5 style="text-transform:capitalize;">{{ evento.nombre }}</h5>
+                                </small>
+                            </div>
+                        </td>
+                        {% cycle '' '' '' '</tr>' %} {% endfor %}
+                </table>
+            </div>      
+    </div>
+</section>
+{% endblock %}

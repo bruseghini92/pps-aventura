@@ -18,11 +18,16 @@ from django.urls import path
 from django.conf.urls import include, url
 from django.conf import settings
 from django.views.static import serve
+from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
-    url(r'^media/(?P<path>.*)$', serve, {
-            'document_root': settings.MEDIA_ROOT,
-        }),
-]
+    #path('admin/', admin.site.urls),
+    #url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+    #url(r'^eventos', include('aventuras.urls')),
+    #path(r'', include('aventuras.urls')),
+    #url(r'^media/(?P<path>.*)$', serve, {
+    #        'document_root': settings.MEDIA_ROOT,
+    #   }),
+    #url(r'^$', TemplateView.as_view(template_name='index.html')),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
