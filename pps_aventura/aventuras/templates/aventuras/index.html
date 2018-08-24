@@ -186,9 +186,7 @@
 <!-- #endregion Jssor Slider End -->
 <section class="bg-primary text-white mb-0">
   <div id=calendar>
-      
     <script>
-
       $(document).ready(function (event, jsEvent, view) {
         var currentdate = new Date(); 
         var datetime = "Last Sync: " + currentdate.getDate() + "-"
@@ -200,16 +198,15 @@
           editable: false,
           eventLimit: true, // allow "more" link when too many events
           events: [
-            {% for evento in event_list %}
+          {% for evento in event_list %}
                 {
-            id: '{{ evento.id }}',
-            title: '{{ evento.nombre }}',
-            start: '{{ evento.fecha }}',
-            inscripcion: '{{ evento.inscripcion }}',
-            ourEvent:'{{ evento.ourEvent|yesno:"true,false" }}'
-          },
-          {% endfor %}
-                
+                  id: '{{ evento.id }}',
+                  title: '{{ evento.nombre }}',
+                  start: '{{ evento.fecha|date:"Y-m-d" }}',
+                  inscripcion: '{{ evento.inscripcion }}',
+                  ourEvent:'{{ evento.ourEvent|yesno:"true,false" }}'
+                },
+            {% endfor %}     
               ],
               eventClick: function(evento) {
                   window.open("{{ BASE_DIR }}"+evento.id);
@@ -217,7 +214,6 @@
             });
         
           });
-
     </script>
     <div id="calendar"></div>
   </div>

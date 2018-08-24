@@ -10,9 +10,10 @@ from django.http import HttpResponse
 
 
 def index(request):
-    context = {'event_list': Evento.objects.all(),
-               'slide_list': Photo.objects.filter(galleries=Gallery.objects.get(title='slide'))}
-    # 'photo_list':Photo.objects.filter(gallery="tuvieja")}
+    context = {
+        'event_list': Evento.objects.all(),
+        'slide_list': Photo.objects.filter(galleries=Gallery.objects.get(title='slide'))
+               }
     return render(request, 'aventuras/index.html', context)
 
 
